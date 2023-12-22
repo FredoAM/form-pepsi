@@ -16,16 +16,16 @@ const App = () => {
             <Container maxW="25%">
                 <UnorderedList maxW='100%'  mt='5px' ml='0' display='flex' flexDirection='column' gap='15px' listStyleType="none" color='rgba(0, 90, 246, 0.719)' >
                     <ListItem p='10px 20px 10px 20px' bgColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' color='black' >
-                        <Link textDecoration='none' href="#application-id">Application ID</Link>
+                        <Link _hover={{ textDecoration:'none'}} href="#application-id">Application ID</Link>
                     </ListItem>
                     <ListItem p='10px 20px 10px 20px'>
-                        <Link textDecoration='none' href="#application-roles">Application Roles</Link>
+                        <Link _hover={{ textDecoration:'none'}} href="#application-roles">Application Roles</Link>
                     </ListItem>
                     <ListItem p='10px 20px 10px 20px'>
-                        <Link textDecoration='none' href="#application-rule1">Access Rule #1</Link>
+                        <Link _hover={{ textDecoration:'none'}} href="#application-rule1">Access Rule #1</Link>
                     </ListItem>
                     <ListItem p='10px 20px 10px 20px'>
-                        <Link textDecoration='none' href="#application-rule2">Access Rule #2</Link>
+                        <Link _hover={{ textDecoration:'none'}} href="#application-rule2">Access Rule #2</Link>
                     </ListItem>
                     <ListItem display='flex' alignItems='center'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px'  >
                         <Input _hover={{cursor: "pointer" }} placeholder="Add New Access Rule" border="none" _placeholder={{ color: "rgba(0, 90, 246, 0.719)" }} p='10px 20px 10px 20px' />
@@ -154,8 +154,8 @@ const App = () => {
                             <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                         </Box>
                         <Box display="flex" justifyContent='space-between' mt='20px'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' alignItems='center' color='rgba(0, 90, 246, 0.719)'>
-                            <Input _hover={{cursor: "pointer" }} placeholder="Add New Role" border="none"  />
-                            <AddIcon _hover={{ color:'gray', cursor:'pointer' }} mr='15px'/>
+                            <Input _hover={{cursor: "pointer" }} placeholder="Add New Role" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                            <AddIcon _hover={{ color:'gray', cursor:'pointer' }} mr='15px' />
                         </Box>
                     </FormControl>
                 </Container>
