@@ -1,4 +1,4 @@
-import { Flex, Box, UnorderedList, ListItem, Heading, Switch,  FormLabel, Input, Container, Textarea, Text , FormControl, Select, Button ,Divider, Image   } from "@chakra-ui/react"
+import { Flex, Box, UnorderedList, ListItem, Heading, Switch,  FormLabel, Input, Container, Textarea, Text , FormControl, Select, Button ,Divider, Image , Link   } from "@chakra-ui/react"
 import { AddIcon, DeleteIcon, CloseIcon , ArrowUpIcon} from '@chakra-ui/icons'
 
 
@@ -15,11 +15,20 @@ const App = () => {
             
             <Container maxW="25%">
                 <UnorderedList maxW='100%'  mt='5px' ml='0' display='flex' flexDirection='column' gap='15px' listStyleType="none" color='rgba(0, 90, 246, 0.719)' >
-                    <ListItem p='10px 20px 10px 20px' bgColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' color='black' >Application ID</ListItem>
-                    <ListItem p='10px 20px 10px 20px'>Application Roles</ListItem>
-                    <ListItem p='10px 20px 10px 20px'>Access Rule #1</ListItem>
+                    <ListItem p='10px 20px 10px 20px' bgColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' color='black' >
+                        <Link textDecoration='none' href="#application-id">Application ID</Link>
+                    </ListItem>
+                    <ListItem p='10px 20px 10px 20px'>
+                        <Link textDecoration='none' href="#application-roles">Application Roles</Link>
+                    </ListItem>
+                    <ListItem p='10px 20px 10px 20px'>
+                        <Link textDecoration='none' href="#application-rule1">Access Rule #1</Link>
+                    </ListItem>
+                    <ListItem p='10px 20px 10px 20px'>
+                        <Link textDecoration='none' href="#application-rule2">Access Rule #2</Link>
+                    </ListItem>
                     <ListItem display='flex' alignItems='center'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px'  >
-                        <Input placeholder="Add New Access Rule" border="none" _placeholder={{ color: "rgba(0, 90, 246, 0.719)" }} p='10px 20px 10px 20px' />
+                        <Input _hover={{cursor: "pointer" }} placeholder="Add New Access Rule" border="none" _placeholder={{ color: "rgba(0, 90, 246, 0.719)" }} p='10px 20px 10px 20px' />
                         <AddIcon _hover={{ color: "gray", cursor: "pointer" }} mr='15px' />
                     </ListItem>
                 </UnorderedList>
@@ -31,7 +40,7 @@ const App = () => {
 
                 {/* Application ID */}
 
-                <Container maxW='100%' mt='15px' >
+                <Container maxW='100%' mt='15px' id="application-id">
                         <Heading as='h2' fontSize='1.2em'>Application ID</Heading>
                         <Text mt='20px'>Please provide the required information to add a new app to the App Catalogue</Text>
                     <Flex maxW='100%'>
@@ -94,7 +103,7 @@ const App = () => {
                  {/* Application Approvers */}
 
 
-                <Container maxW='100%' mt='40px'>
+                <Container maxW='100%' mt='40px' >
                     <Heading as='h2' fontSize='1.2em'>Applicaction Approvers</Heading>
                         <Box display='flex' width='100%'>
                             <FormControl maxW='32.5%' mr='40px'>
@@ -113,7 +122,7 @@ const App = () => {
                             </FormControl>
                         </Box>
                         <Box maxW='32.5%' mr='40px' display="flex" justifyContent='space-between' mt='20px'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px'  alignItems='center' color='rgba(0, 90, 246, 0.719)' > 
-                            <Input placeholder="Add New Global Approver" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                            <Input _hover={{cursor: "pointer" }} placeholder="Add New Global Approver" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
                             <AddIcon _hover={{ color:'gray', cursor:'pointer' }} mr='15px'/>
                         </Box>
                 </Container>
@@ -122,7 +131,7 @@ const App = () => {
 
                 {/* Application Roles */}
 
-                <Container maxW='100%'  mt='20px'>
+                <Container maxW='100%'  mt='20px' id="application-roles">
                         <Heading as='h2' fontSize='1.2em'>Applicaction Roles</Heading>
                         <Text mt='15px'>Please provide the required
                             information to defines Roles and permissions for this app
@@ -136,16 +145,16 @@ const App = () => {
                             <Input type="text" placeholder="Type Type of Role" border='1px'  borderColor='gray' borderRadius='5px'/>
                         </Box>
                         <Box display="flex" justifyContent='space-between' mt='20px' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                            <Input placeholder="Executive" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                            <Input placeholder="Executive" border="none"  />
                             <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                         </Box>
 
                         <Box display="flex" justifyContent='space-between' mt='20px' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                            <Input placeholder="Regular" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                            <Input placeholder="Regular" border="none"  />
                             <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                         </Box>
                         <Box display="flex" justifyContent='space-between' mt='20px'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' alignItems='center' color='rgba(0, 90, 246, 0.719)'>
-                            <Input placeholder="Add New Role" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                            <Input _hover={{cursor: "pointer" }} placeholder="Add New Role" border="none"  />
                             <AddIcon _hover={{ color:'gray', cursor:'pointer' }} mr='15px'/>
                         </Box>
                     </FormControl>
@@ -155,7 +164,7 @@ const App = () => {
 
                 {/* Application Rule #1 */}
 
-                <Container maxW='100%' mt='20px' mb='40px'>
+                <Container maxW='100%' mt='20px' mb='40px' id="application-rule1">
                         <Box display='flex'  mt='20px' gap='15px' alignItems='center'> 
                             <Heading as='h2' fontSize='1.2em'>Applicaction Rule #1</Heading>
                             <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)'/>
@@ -187,7 +196,7 @@ const App = () => {
                             </Box>
                             
                             <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                <Input placeholder="B2B" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input placeholder="B2B" border="none"  />
                                 <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                             </Box>
                             <Box component="header" display="flex" justifyContent='space-between' mt='20px'>
@@ -195,7 +204,7 @@ const App = () => {
                                 <FormLabel>*Required</FormLabel>
                             </Box>
                             <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                <Input placeholder="GS" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input placeholder="GS" border="none"  />
                                 <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                             </Box>
                             
@@ -204,7 +213,7 @@ const App = () => {
                                 <FormLabel>*Required</FormLabel>
                             </Box>
                             <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                <Input placeholder="R360" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input placeholder="R360" border="none"  />
                                 <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                             </Box>
                         
@@ -219,7 +228,7 @@ const App = () => {
                             </Select>
                         
                             <Box display="flex" justifyContent='space-between' mt='20px'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' alignItems='center' color='rgba(0, 90, 246, 0.719)'>
-                                <Input placeholder="Add New Item" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input _hover={{cursor: "pointer" }} placeholder="Add New Item" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
                                 <AddIcon _hover={{ color:'gray', cursor:'pointer' }} mr='15px'/>
                             </Box>
                         </FormControl>
@@ -229,7 +238,7 @@ const App = () => {
                                     <FormLabel>*Required</FormLabel>
                                 </Box>
                                 <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                    <Input placeholder="B2B" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                    <Input placeholder="B2B" border="none"  />
                                     <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                                 </Box>
                                 <Box component="header" display="flex" justifyContent='space-between' mt='20px'>
@@ -237,7 +246,7 @@ const App = () => {
                                     <FormLabel>*Required</FormLabel>
                                 </Box>
                                 <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                    <Input placeholder="GS" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                    <Input placeholder="GS" border="none"  />
                                     <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                                 </Box>
                                 <Box component="header" display="flex" justifyContent='space-between' mt='20px'>
@@ -245,7 +254,7 @@ const App = () => {
                                     <FormLabel>*Required</FormLabel>
                                 </Box>
                                 <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                    <Input placeholder="R360" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                    <Input placeholder="R360" border="none"  />
                                     <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                                 </Box>
                             <FormControl >
@@ -265,7 +274,7 @@ const App = () => {
 
                 {/* Application Rule #2 */}
 
-                <Container maxW='100%' mt='20px' mb='40px'>
+                <Container maxW='100%' mt='20px' mb='40px' id="application-rule2">
                         <Box display='flex'  mt='20px' gap='15px' alignItems='center'> 
                             <Heading as='h2' fontSize='1.2em'>Applicaction Rule #2</Heading>
                             <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)'/>
@@ -296,7 +305,7 @@ const App = () => {
                                 <FormLabel>*Required</FormLabel>
                             </Box>
                             <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                <Input placeholder="LATAM" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input placeholder="LATAM" border="none"  />
                                 <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                             </Box>
                             
@@ -305,7 +314,7 @@ const App = () => {
                                 <FormLabel>*Required</FormLabel>
                             </Box>
                             <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                <Input placeholder="ESSA" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input placeholder="ESSA" border="none"  />
                                 <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                             </Box>
                             
@@ -314,7 +323,7 @@ const App = () => {
                                 <FormLabel>*Required</FormLabel>
                             </Box>
                             <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                <Input placeholder="PFNA" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input placeholder="PFNA" border="none"  />
                                 <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                             </Box>
                         
@@ -329,7 +338,7 @@ const App = () => {
                             </Select>
                         
                             <Box display="flex" justifyContent='space-between' mt='20px'  border='2px dashed' borderColor='rgba(130, 199, 255, 0.646)' borderRadius='10px' alignItems='center' color='rgba(0, 90, 246, 0.719)' >
-                                <Input placeholder="Add New Item" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                <Input _hover={{cursor: "pointer" }} placeholder="Add New Item" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
                                 <AddIcon _hover={{ color:'gray', cursor:'pointer' }} mr='15px'/>
                             </Box>
                         </FormControl>
@@ -339,7 +348,7 @@ const App = () => {
                                     <FormLabel>*Required</FormLabel>
                                 </Box>
                                 <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                    <Input placeholder="LATAM" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                    <Input placeholder="LATAM" border="none"  />
                                     <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                                 </Box>
                                 <Box component="header" display="flex" justifyContent='space-between' mt='20px'>
@@ -347,7 +356,7 @@ const App = () => {
                                     <FormLabel>*Required</FormLabel>
                                 </Box>
                                 <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                    <Input placeholder="ESSA" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                    <Input placeholder="ESSA" border="none"  />
                                     <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                                 </Box>
                                 <Box component="header" display="flex" justifyContent='space-between' mt='20px'>
@@ -355,7 +364,7 @@ const App = () => {
                                     <FormLabel>*Required</FormLabel>
                                 </Box>
                                 <Box display="flex" justifyContent='space-between' border='1px'  borderColor='gray' borderRadius='5px'  alignItems='center'>
-                                    <Input placeholder="PFNA" border="none" _placeholder={{color:'rgba(0, 90, 246, 0.719)'}} />
+                                    <Input placeholder="PFNA" border="none"  />
                                     <DeleteIcon _hover={{ color:'gray', cursor:'pointer' }} color='rgba(0, 90, 246, 0.719)' mr='15px'/>
                                 </Box>
                             <FormControl >
